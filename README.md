@@ -210,7 +210,9 @@ If no compilation errors occur, the SDK has been successfully installed.
 
 
 ## Delegate Protocols
-a
+
+The `CCKFApiConversationDelegate` protocol is the primary interface that host applications implement to receive events from the SDK. This protocol defines three essential methods for handling conversation-related events.
+
 
 ### Protocol Definition
 
