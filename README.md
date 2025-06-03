@@ -171,7 +171,7 @@ If no compilation errors occur, the SDK has been successfully installed.
 ## Core SDK Methods
 
 #### Initialization and Session Management
-1. **initSDK(host:entryId:appkey:userMappings:needRealtimePush:)**
+1. `initSDK(host:entryId:appkey:userMappings:needRealtimePush:)`
    
     Initializes the SDK with connection parameters and user information.
 
@@ -183,7 +183,7 @@ If no compilation errors occur, the SDK has been successfully installed.
     - `userMappings: UserMappingModel` - User identity and device information
     - `needRealtimePush: Bool` - Enable real-time push notifications (default: true)
 
-3. **startSession(host:entryId:appkey:userMappings:needRealtimePush:callBack:)**
+2. `startSession(host:entryId:appkey:userMappings:needRealtimePush:callBack:)`
    
     Starts a new communication session with the specified parameters.
 
@@ -196,7 +196,7 @@ If no compilation errors occur, the SDK has been successfully installed.
     - `needRealtimePush: Bool` - Enable real-time push (default: false)
     - `callBack: (() -> Void)?` - Optional completion callback
 
-5. **getUnreadCount(host:entryId:appkey:userMappings:completion:)**
+3. `getUnreadCount(host:entryId:appkey:userMappings:completion:)`
    
     Retrieves the count of unread messages for the user.
 
@@ -208,6 +208,15 @@ If no compilation errors occur, the SDK has been successfully installed.
     - `userMappings: UserMappingModel` - User identity information
     - `completion: @escaping (Result<Int, Error>) -> Void` - Completion handler with unread count or error 
 
+
+4. `sendMessage(msgType:msgBody:)`
+   
+    Sends a message through the communication channel.
+
+   
+    **Parameters**:
+    - `msgType: Int` - Message type identifier
+    - `msgBody: MessageBody` - Message content and metadata
 
 ## Delegate Protocols
 
