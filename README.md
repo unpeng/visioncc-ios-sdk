@@ -51,6 +51,10 @@ The SDK has transitioned from a fully native implementation to a WebView-based a
 
 The `CCKFApi` class is the main interface between the host application and the SDK. It's a subclass of `UIViewController` that manages the WebView and provides methods for communication.
 
+### Architecture
+![00e5e970-fb66-4bd0-8122-aaa66654a2b1](https://github.com/user-attachments/assets/c2956356-4c76-48a9-905c-d7961878841d)
+
+
 ## Installation and Setup
 
 VisionCCiOSSDK in your iOS project. The SDK can be integrated using either CocoaPods or Swift Package Manager (SPM)
@@ -163,6 +167,47 @@ To verify that the SDK has been successfully installed, you can perform these st
    ```
 
 If no compilation errors occur, the SDK has been successfully installed.
+
+## Core SDK Methods
+
+#### Initialization and Session Management
+1. **initSDK(host:entryId:appkey:userMappings:needRealtimePush:)**
+   
+    Initializes the SDK with connection parameters and user information.
+
+
+    **Parameters**:
+    - `host: String` - VisionCC server host URL
+    - `entryId: String` - Entry point identifier for the conversation
+    - `appkey: String` - Application authentication key
+    - `userMappings: UserMappingModel` - User identity and device information
+    - `needRealtimePush: Bool` - Enable real-time push notifications (default: true)
+
+3. **startSession(host:entryId:appkey:userMappings:needRealtimePush:callBack:)**
+   
+    Starts a new communication session with the specified parameters.
+
+
+    **Parameters**:
+    - `host: String` - VisionCC server host URL
+    - `entryId: String` - Entry point identifier
+    - `appkey: String` - Application authentication key
+    - `userMappings: UserMappingModel` - User identity information
+    - `needRealtimePush: Bool` - Enable real-time push (default: false)
+    - `callBack: (() -> Void)?` - Optional completion callback
+
+5. **getUnreadCount(host:entryId:appkey:userMappings:completion:)**
+   
+    Retrieves the count of unread messages for the user.
+
+   
+    **Parameters**:
+    - `host: String` - VisionCC server host URL
+    - `entryId: String` - Entry point identifier
+    - `appkey: String` - Application authentication key
+    - `userMappings: UserMappingModel` - User identity information
+    - `completion: @escaping (Result<Int, Error>) -> Void` - Completion handler with unread count or error 
+
 
 ## Troubleshooting
 
