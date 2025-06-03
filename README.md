@@ -209,6 +209,28 @@ If no compilation errors occur, the SDK has been successfully installed.
     - `completion: @escaping (Result<Int, Error>) -> Void` - Completion handler with unread count or error 
 
 
+## Delegate Protocols
+a
+
+### Protocol Definition
+
+![image](https://github.com/user-attachments/assets/09f81749-2d99-47e8-8c87-97999c5bb4ee)
+
+### Delegate Protocol Methods
+
+| Method | Purpose | Parameters |
+| ---- | ---- | ---- |
+| `unReadMessageCountEvent(count:)` | Notifies when unread message count changes | count: Current unread message count |
+| `trackEvent(name:attributes:)` | Reports user interaction and analytics events | name: Event name, attributes: Event metadata |
+| `newMessageEvent(entryId:msgId:message:)` | Signals arrival of new messages | entryId: Entry identifier, msgId: Message ID, message: Message content |
+
+### Implementation Pattern
+
+Applications typically implement this delegate to update UI components, handle notifications, and track user engagement:
+
+![image](https://github.com/user-attachments/assets/f005abd4-d237-4017-880e-40d704a91529)
+
+
 ## Troubleshooting
 
 ### Common CocoaPods Issues
